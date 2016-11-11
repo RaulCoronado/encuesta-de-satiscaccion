@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Encuesta de satisfaccion </h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/E2E07B3C-9665-4247-B2E9-D0162C4B0D6C" uiVersion="1" version="1" name="Encuesta de satisfaccion ">
+					<information />
+					<nombre_cliente />
+					<question7 />
+					<question8 />
+					<question9 jr:template="">
+						<question10 />
+						<question11 />
+					</question9>
+					<numero_telefono />
+					<question1 />
+					<question2 />
+					<desde_cuando_cliente />
+					<question5 />
+					<sample_number_question />
+					<question3 />
+					<question4 />
+				</data>
+			</instance>
+			<bind vellum:nodeset="#form/information" nodeset="/data/information" />
+			<bind vellum:nodeset="#form/nombre_cliente" nodeset="/data/nombre_cliente" type="xsd:string" required="false()" />
+			<bind vellum:nodeset="#form/question7" nodeset="/data/question7" required="true()" />
+			<bind vellum:nodeset="#form/question8" nodeset="/data/question8" type="xsd:int" vellum:relevant="#form/question7 = 'si'" relevant="/data/question7 = 'si'" required="true()" />
+			<bind vellum:nodeset="#form/question9" nodeset="/data/question9" />
+			<bind vellum:nodeset="#form/question9/question10" nodeset="/data/question9/question10" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/question9/question11" nodeset="/data/question9/question11" />
+			<bind vellum:nodeset="#form/numero_telefono" nodeset="/data/numero_telefono" type="xsd:string" constraint="string-length(.) &gt;= 8 and regex(., '^[0-9]+$')" jr:constraintMsg="jr:itext('numero_telefono-constraintMsg')" />
+			<bind vellum:nodeset="#form/question1" nodeset="/data/question1" required="true()" />
+			<bind vellum:nodeset="#form/question2" nodeset="/data/question2" required="true()" />
+			<bind vellum:nodeset="#form/desde_cuando_cliente" nodeset="/data/desde_cuando_cliente" required="true()" />
+			<bind vellum:nodeset="#form/question5" nodeset="/data/question5" type="xsd:string" />
+			<bind vellum:nodeset="#form/sample_number_question" nodeset="/data/sample_number_question" required="true()" />
+			<bind vellum:nodeset="#form/question3" nodeset="/data/question3" required="true()" />
+			<bind vellum:nodeset="#form/question4" nodeset="/data/question4" type="xsd:string" vellum:relevant="#form/question3 = 'choice2'" relevant="/data/question3 = 'choice2'" />
+			<itext>
+				<translation lang="en" default="">
+					<text id="information-label">
+						<value>Esta encuesta fue elaborada con el proposito de conocer lel grado de satisfaccion de los clientes.</value>
+					</text>
+					<text id="nombre_cliente-label">
+						<value>Nombre</value>
+					</text>
+					<text id="question7-label">
+						<value>Viene con acompañantes ?</value>
+					</text>
+					<text id="question7-si-label">
+						<value>si</value>
+					</text>
+					<text id="question7-choice2-label">
+						<value>no</value>
+					</text>
+					<text id="question8-label">
+						<value>Cuantos acompañantes?</value>
+					</text>
+					<text id="question9/question10-label">
+						<value>Cual es tu nombre</value>
+					</text>
+					<text id="question9/question11-label">
+						<value>Sexo</value>
+					</text>
+					<text id="question9/question11-choice1-label">
+						<value>masculino</value>
+					</text>
+					<text id="question9/question11-choice2-label">
+						<value>Femenino</value>
+					</text>
+					<text id="numero_telefono-label">
+						<value>Numero de telefono</value>
+					</text>
+					<text id="numero_telefono-constraintMsg">
+						<value>Debe contener mas de 8 digitos sin simbolos ni letras</value>
+					</text>
+					<text id="question1-label">
+						<value>Que edad tiene?</value>
+					</text>
+					<text id="question1-1-label">
+						<value>Entre 18 - 30 años</value>
+					</text>
+					<text id="question1-choice2-label">
+						<value>Entre 31 - 45 años</value>
+					</text>
+					<text id="question1-choice3-label">
+						<value>Entre 46 - 60 años</value>
+					</text>
+					<text id="question1-choice4-label">
+						<value>61 años o mas</value>
+					</text>
+					<text id="question2-label">
+						<value>Sexo</value>
+					</text>
+					<text id="question2-choice1-label">
+						<value>Masculino</value>
+					</text>
+					<text id="question2-choice2-label">
+						<value>Femenino</value>
+					</text>
+					<text id="question2-choice3-label">
+						<value>Prefiero no contestar</value>
+					</text>
+					<text id="desde_cuando_cliente-label">
+						<value>Desde cuando es usted nuestro cliente?</value>
+					</text>
+					<text id="desde_cuando_cliente-1-label">
+						<value>Menos de 1 año</value>
+					</text>
+					<text id="desde_cuando_cliente-2-label">
+						<value>Entre 1 - 3 años</value>
+					</text>
+					<text id="desde_cuando_cliente-3-label">
+						<value>Mas de 4 años</value>
+					</text>
+					<text id="question5-label">
+						<value>Tiene alguna sugerencia</value>
+					</text>
+					<text id="sample_number_question-label">
+						<value>Como se dio cuenta de nuestros servicios?</value>
+					</text>
+					<text id="sample_number_question-choice1-label">
+						<value>Internet</value>
+					</text>
+					<text id="sample_number_question-choice2-label">
+						<value>Periodico o revistas</value>
+					</text>
+					<text id="sample_number_question-choice3-label">
+						<value>Amistades</value>
+					</text>
+					<text id="sample_number_question-choice4-label">
+						<value>Television</value>
+					</text>
+					<text id="sample_number_question-choice5-label">
+						<value>Envio de informacion (Publicidad directa)</value>
+					</text>
+					<text id="question3-label">
+						<value>La atencion recivida fue correcta y en los tiempos previstos?</value>
+					</text>
+					<text id="question3-choice1-label">
+						<value>si</value>
+					</text>
+					<text id="question3-choice2-label">
+						<value>no</value>
+					</text>
+					<text id="question4-label">
+						<value>Explique porque</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<trigger vellum:ref="#form/information" ref="/data/information" appearance="minimal">
+			<label ref="jr:itext('information-label')" />
+		</trigger>
+		<input vellum:ref="#form/nombre_cliente" ref="/data/nombre_cliente">
+			<label ref="jr:itext('nombre_cliente-label')" />
+		</input>
+		<select1 vellum:ref="#form/question7" ref="/data/question7">
+			<label ref="jr:itext('question7-label')" />
+			<item>
+				<label ref="jr:itext('question7-si-label')" />
+				<value>si</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question7-choice2-label')" />
+				<value>choice2</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/question8" ref="/data/question8">
+			<label ref="jr:itext('question8-label')" />
+		</input>
+		<group>
+			<repeat vellum:jr__count="#form/question8" jr:count="/data/question8" jr:noAddRemove="true()" vellum:nodeset="#form/question9" nodeset="/data/question9">
+				<input vellum:ref="#form/question9/question10" ref="/data/question9/question10">
+					<label ref="jr:itext('question9/question10-label')" />
+				</input>
+				<select1 vellum:ref="#form/question9/question11" ref="/data/question9/question11">
+					<label ref="jr:itext('question9/question11-label')" />
+					<item>
+						<label ref="jr:itext('question9/question11-choice1-label')" />
+						<value>choice1</value>
+					</item>
+					<item>
+						<label ref="jr:itext('question9/question11-choice2-label')" />
+						<value>choice2</value>
+					</item>
+				</select1>
+			</repeat>
+		</group>
+		<input vellum:ref="#form/numero_telefono" ref="/data/numero_telefono">
+			<label ref="jr:itext('numero_telefono-label')" />
+			<alert ref="jr:itext('numero_telefono-constraintMsg')" />
+		</input>
+		<select1 vellum:ref="#form/question1" ref="/data/question1">
+			<label ref="jr:itext('question1-label')" />
+			<item>
+				<label ref="jr:itext('question1-1-label')" />
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question1-choice2-label')" />
+				<value>choice2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question1-choice3-label')" />
+				<value>choice3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question1-choice4-label')" />
+				<value>choice4</value>
+			</item>
+		</select1>
+		<select1 vellum:ref="#form/question2" ref="/data/question2">
+			<label ref="jr:itext('question2-label')" />
+			<item>
+				<label ref="jr:itext('question2-choice1-label')" />
+				<value>choice1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question2-choice2-label')" />
+				<value>choice2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question2-choice3-label')" />
+				<value>choice3</value>
+			</item>
+		</select1>
+		<select1 vellum:ref="#form/desde_cuando_cliente" ref="/data/desde_cuando_cliente">
+			<label ref="jr:itext('desde_cuando_cliente-label')" />
+			<item>
+				<label ref="jr:itext('desde_cuando_cliente-1-label')" />
+				<value>1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('desde_cuando_cliente-2-label')" />
+				<value>2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('desde_cuando_cliente-3-label')" />
+				<value>3</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/question5" ref="/data/question5">
+			<label ref="jr:itext('question5-label')" />
+		</input>
+		<select1 vellum:ref="#form/sample_number_question" ref="/data/sample_number_question">
+			<label ref="jr:itext('sample_number_question-label')" />
+			<item>
+				<label ref="jr:itext('sample_number_question-choice1-label')" />
+				<value>choice1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sample_number_question-choice2-label')" />
+				<value>choice2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sample_number_question-choice3-label')" />
+				<value>choice3</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sample_number_question-choice4-label')" />
+				<value>choice4</value>
+			</item>
+			<item>
+				<label ref="jr:itext('sample_number_question-choice5-label')" />
+				<value>choice5</value>
+			</item>
+		</select1>
+		<select1 vellum:ref="#form/question3" ref="/data/question3">
+			<label ref="jr:itext('question3-label')" />
+			<item>
+				<label ref="jr:itext('question3-choice1-label')" />
+				<value>choice1</value>
+			</item>
+			<item>
+				<label ref="jr:itext('question3-choice2-label')" />
+				<value>choice2</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/question4" ref="/data/question4">
+			<label ref="jr:itext('question4-label')" />
+		</input>
+	</h:body>
+</h:html>
